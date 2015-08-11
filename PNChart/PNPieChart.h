@@ -44,11 +44,19 @@
 /** Default YES. */
 @property (nonatomic) BOOL shouldHighlightSectorOnTouch;
 
+/** Current outer radius. Override recompute() to change this. **/
+@property (nonatomic) CGFloat outerCircleRadius;
+
+/** Current inner radius. Override recompute() to change this. **/
+@property (nonatomic) CGFloat innerCircleRadius;
+
 @property (nonatomic, weak) id<PNChartDelegate> delegate;
 
 /** Update chart items. Does not update chart itself. */
 - (void)updateChartData:(NSArray *)data;
 
 - (void)strokeChart;
+
+- (void)recompute;
 
 @end
